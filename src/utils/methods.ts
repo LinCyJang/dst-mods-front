@@ -4,7 +4,7 @@ import instance from './https'
 export async function get<T>(url: string, params?: any): Promise<T> {
    try {
     const response = await instance.get<T>(url, { params });
-    return response.data;
+    return response.data as unknown as T;
   } catch (error) {
     throw error;
   }
@@ -38,3 +38,4 @@ export async function del<T>(url: string): Promise<T> {
     throw error;
   }
 }
+

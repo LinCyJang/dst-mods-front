@@ -4,7 +4,9 @@ type modsCards = {
   preview_url: string;
   file_url: string;
   num_comments_public:number;
-  flags:number
+  flags: number;
+  banned: boolean
 }
+
 
 export type { modsCards }

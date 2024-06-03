@@ -11,7 +11,7 @@ import MainView from './Main.vue';
             <!-- <VerticalSidebarVue />
             <VerticalHeaderVue  /> -->
             <MainView />
-            <v-main>
+            <v-main class="grey-lighten-5">
                 <v-container fluid class="page-wrapper">
                     <div class="maxWidth">
                         <RouterView />
