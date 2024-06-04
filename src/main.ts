@@ -7,7 +7,11 @@ import PerfectScrollbar from 'vue3-perfect-scrollbar';
 import VueApexCharts from 'vue3-apexcharts';
 import VueTablerIcons from 'vue-tabler-icons';
 import Maska from 'maska';
+import VOverlay from './directives/VOverlay';
+
 const app = createApp(App);
+
+app.directive('v-overlay', VOverlay);
 app.use(router);
 app.use(PerfectScrollbar);
 app.use(VueTablerIcons);

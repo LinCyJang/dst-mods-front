@@ -8,3 +8,9 @@ export interface RoomRequest{
   rowId: number,
 }
 
+export interface RoomsResponse{
+  data: {
+    GET: any[];
+  };
+}
+

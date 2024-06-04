@@ -19,3 +19,6 @@ html {
 .v-divider {
     border-color: rgba(var(--v-border-color), 1) !important;
 }
+.flex-nowrap{
+    flex-wrap: nowrap;
+}

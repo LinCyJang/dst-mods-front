@@ -4,6 +4,12 @@ import sidebarItems from './vertical-sidebar/sidebarItem';
 import NavGroup from './vertical-sidebar/NavGroup/index.vue';
 import NavItem from './vertical-sidebar/NavItem/index.vue';
 import Logo from './logo/Logo.vue';
+
+import { useRouter } from 'vue-router'
+
+const router = useRouter().getRoutes()
+
+console.log(router);
 // Icon Imports
 import { Menu2Icon, BellRingingIcon } from 'vue-tabler-icons';
 // dropdown imports

@@ -22,6 +22,6 @@ export const getRooms = (params: RoomsRequest) => {
  * @param params 
  * @returns 
  */
-export const getRooms = (params: RoomRequest) => {
+export const getRoom = (params: RoomRequest) => {
   return get('/dst/v1/lobby-read', params)
 }

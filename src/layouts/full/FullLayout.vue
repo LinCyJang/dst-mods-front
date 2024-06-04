@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
+import { ref } from 'vue';
 // import VerticalSidebarVue from './vertical-sidebar/VerticalSidebar.vue';
 // import VerticalHeaderVue from './vertical-header/VerticalHeader.vue';
 import MainView from './Main.vue';
+
+let isOverlay = ref(true)
 </script>
 
 <template>
@@ -11,9 +14,9 @@ import MainView from './Main.vue';
             <!-- <VerticalSidebarVue />
             <VerticalHeaderVue  /> -->
             <MainView />
-            <v-main class="grey-lighten-5">
+            <v-main class="grey-lighten-5" >
                 <v-container fluid class="page-wrapper">
-                    <div class="maxWidth">
+                    <div >
                         <RouterView />
                     </div>
                 </v-container>

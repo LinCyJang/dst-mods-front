@@ -7,32 +7,38 @@ const MainRoutes = {
     component: () => import('@/layouts/full/FullLayout.vue'),
     children: [
         {
-            name: 'Dashboard',
+            name: 'HOME-Dashboard',
             path: '/',
             component: () => import('@/views/dashboard/index.vue')
         },
         {
-            name: 'Mods',
+            name: 'DST-Mods',
             path: '/dst/mods',
             component: () => import('@/views/mods/index.vue')
         },
         {
-            name: 'Typography',
+            name: 'DST-Rooms',
+            path: '/dst/rooms',
+            component: () => import('@/views/rooms/index.vue')
+        },
+        {
+            name: 'UTILTIES-Typography',
             path: '/ui/typography',
             component: () => import('@/views/components/Typography.vue')
         },
         {
-            name: 'Shadow',
+            name: 'UTILTIES-Shadow',
             path: '/ui/shadow',
+            model: 'UTILTIES',
             component: () => import('@/views/components/Shadow.vue')
         },
         {
-            name: 'Icons',
+            name: 'EXTRA-Icons',
             path: '/icons',
             component: () => import('@/views/pages/Icons.vue')
         },
         {
-            name: 'Starter',
+            name: 'EXTRA-Starter',
             path: '/sample-page',
             component: () => import('@/views/pages/SamplePage.vue')
         },

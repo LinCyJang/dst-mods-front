@@ -4,6 +4,7 @@ import {
     LayoutDashboardIcon, LoginIcon, MoodHappyIcon, TypographyIcon, UserPlusIcon
 } from 'vue-tabler-icons';
 
+
 export interface menu {
     header?: string;
     title?: string;
@@ -31,6 +32,11 @@ const sidebarItem: menu[] = [
         title: 'Mods',
         icon: TypographyIcon,
         to: '/dst/mods'
+    },
+    {
+        title: 'Rooms',
+        icon: TypographyIcon,
+        to: '/dst/rooms'
     },
     {
         title: 'Typography',

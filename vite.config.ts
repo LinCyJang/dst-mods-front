@@ -9,6 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
+        // target: 'http://124.221.68.239:5000', // 设置代理目标
         target: 'http://localhost:5000', // 设置代理目标
         changeOrigin: true, // 是否改变请求源地址
         rewrite: (path) => path.replace(/^\/api/, '') // 将 /api 替换为空字符串

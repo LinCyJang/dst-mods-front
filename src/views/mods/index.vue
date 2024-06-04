@@ -36,7 +36,6 @@ const queryList = () => {
 }
 
 const changePage = (_page: number) => {
-  console.log(_page);
   page.value = _page
   queryList()
 }
@@ -46,7 +45,7 @@ const changePage = (_page: number) => {
   <v-row>
     <v-col cols="12">
       <ModsCards :mods-card="mods" v-if="loading"/>
-      <v-pagination :total-visible="10" :length="Math.ceil(total / 10)" v-model="page" @update:model-value="changePage"></v-pagination>
     </v-col>
   </v-row>
+  <v-pagination :total-visible="10" :length="Math.ceil(total / 10)" v-model="page" @update:model-value="changePage"></v-pagination>
 </template>
