@@ -5,7 +5,7 @@ export interface RoomsRequest{
 
 export interface RoomRequest{
   region: string,
-  rowId: number,
+  rowId: string,
 }
 
 export interface RoomsResponse{
