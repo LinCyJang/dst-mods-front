@@ -56,8 +56,6 @@ type modsCards = {
   }; // 模组的投票数据
   workshop_accepted: boolean; // 模组是否被Steam Workshop接受
   workshop_file: boolean; // 是否是一个工作坊文件
-  __addr: string;
-  __rowId: string;
 }
 
 

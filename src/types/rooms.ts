@@ -9,7 +9,9 @@ type RoomsType = {
   mode: string;
   connected: number;
   maxconnections: number;
-  tags: string
+  tags: string,
+  __addr: string;
+  __rowId: string;
 }
 
 type RegionsType = {

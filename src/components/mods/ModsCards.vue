@@ -21,8 +21,8 @@ const imageLoaded = (card: modsCards) => {
   <v-row>
     <v-col cols="2" lg="2" sm="6" v-for="(card, index) in props.modsCard" :key="index">
         <v-card>
-          <div class="pa-1 d-flex align-center justify-center">
-            <img :src="card.preview_url"  height="200" class="rounded-sm" />
+          <div class="d-flex align-center justify-center rounded-md">
+            <img :src="card.preview_url" width="200"  height="200" class="mt-3" style="border-radius: 4px;" />
           </div>
           <div class="d-flex justify-end mr-4 mt-n5">
             <v-btn size="40" icon class="bg-primary d-flex">
@@ -38,7 +38,7 @@ const imageLoaded = (card: modsCards) => {
               <v-icon size="18">mdi-download</v-icon>
               <span class="" v-text="card.subscriptions"></span>
             </div>
-            <v-rating density="compact" color="primary" size="small" v-model="card.vote_data.score" readonly></v-rating>
+            <v-rating density="compact" color="primary" size="small" :model-value="Math.ceil(card.vote_data.score * 5)" readonly></v-rating>
 
           </v-card-item>
         </v-card>

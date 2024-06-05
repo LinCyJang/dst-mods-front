@@ -30,6 +30,7 @@ let imageMap = ref({
   'wilderness': bg,
   '': bg,
 })
+let showRoomDetails = ref(false)
 
 const regionsItems = ref([
   {title: '美国东部（弗吉尼亚北部）',value: "us-east-1",},
@@ -43,7 +44,7 @@ const platformItems = ref([
 const gamePlatformMap = {
   1: 'Steam|mdi-steam',
   2: 'PSN|mdi-playstation',
-  4: 'Rail|mdi-gamepad-square',
+  4: 'WeGame|mdi-gamepad-square',
   16: 'XBone|mdi-xbox',
   32: 'Switch|mdi-nintendo-switch',
 };
@@ -131,12 +132,15 @@ const getRoomDetails = (rowId: string) => {
     rowId: rowId
   }
   getRoom(params).then(res => {
-    console.log(res);
+    showRoomDetails.value = true
+    console.log(showRoomDetails.value);
     
   })
 }
 </script>
 <template>
+  {{ showRoomDetails }}
+  <VRoom :dialog="showRoomDetails" v-model="showRoomDetails" ></VRoom>
   <v-app-bar class="px-2" flat>
     <v-row>
       <v-col cols="3">
@@ -228,5 +232,4 @@ const getRoomDetails = (rowId: string) => {
       </v-card>
     </v-col>
   </v-row>
-  <VRoom></VRoom>
 </template>
