@@ -20,7 +20,7 @@ const imageLoaded = (card: modsCards) => {
 <template>
   <v-row>
     <v-col cols="2" lg="2" sm="6" v-for="(card, index) in props.modsCard" :key="index">
-        <UiParentCard>
+        <v-card>
           <div class="pa-1 d-flex align-center justify-center">
             <img :src="card.preview_url"  height="200" class="rounded-sm" />
           </div>
@@ -34,14 +34,14 @@ const imageLoaded = (card: modsCards) => {
           </div>
           <v-card-item class="pt-0 px-2">
             <h6 class="text-body-1 text-truncate" v-text="card.title"></h6>
-            <div class="d-flex align-center justify-space-between mt-1">
-              <div>
-                <span class="text-body-1 " v-text="card.num_comments_public"></span>
-              </div>
-              <v-rating density="compact" color="warning" size="small" v-model="card.num_comments_public" readonly></v-rating>
+            <div class="d-flex align-center mt-1">
+              <v-icon size="18">mdi-download</v-icon>
+              <span class="" v-text="card.subscriptions"></span>
             </div>
+            <v-rating density="compact" color="primary" size="small" v-model="card.vote_data.score" readonly></v-rating>
+
           </v-card-item>
-        </UiParentCard>
+        </v-card>
     </v-col>
   </v-row>
 </template>
