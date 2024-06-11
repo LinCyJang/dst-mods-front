@@ -14,9 +14,9 @@ onMounted(() => {
         page: 1,
         pageSize: 10
     }
-    getMods(params).then(res => {
-        console.log(res);
-    })
+    // getMods(params).then(res => {
+    //     console.log(res);
+    // })
 })
 </script>
 <template>

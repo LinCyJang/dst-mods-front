@@ -5,22 +5,20 @@ import { ref } from 'vue';
 // import VerticalHeaderVue from './vertical-header/VerticalHeader.vue';
 import MainView from './Main.vue';
 
-let isOverlay = ref(true)
+let isOverlay = ref(true);
 </script>
 
 <template>
-    <v-locale-provider >
-        <v-app>
-            <!-- <VerticalSidebarVue />
+  <v-locale-provider>
+    <v-app>
+      <!-- <VerticalSidebarVue />
             <VerticalHeaderVue  /> -->
-            <MainView />
-            <v-main class="grey-lighten-5" >
-                <v-container fluid class="page-wrapper">
-                    <div >
-                        <RouterView />
-                    </div>
-                </v-container>
-            </v-main>
-        </v-app>
-    </v-locale-provider>
+      <MainView />
+      <v-main class="grey-lighten-5">
+        <v-container fluid class="page-wrapper">
+          <router-view></router-view>
+        </v-container>
+      </v-main>
+    </v-app>
+  </v-locale-provider>
 </template>

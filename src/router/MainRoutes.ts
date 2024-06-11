@@ -12,6 +12,16 @@ const MainRoutes = {
             component: () => import('@/views/dashboard/index.vue')
         },
         {
+            name: 'DST-DST',
+            path: '/dst',
+            component: () => import('@/views/dst/index.vue')
+        },
+        {
+            name: 'STEAM-Steam',
+            path: '/steam',
+            component: () => import('@/views/steam/index.vue')
+        },
+        {
             name: 'DST-Mods',
             path: '/dst/mods',
             component: () => import('@/views/mods/index.vue')

@@ -1,0 +1,6 @@
+<template>
+  <div>master</div>
+</template>
+
+<script lang="ts" setup>
+</script>

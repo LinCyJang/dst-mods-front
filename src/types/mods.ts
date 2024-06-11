@@ -58,5 +58,17 @@ type modsCards = {
   workshop_file: boolean; // 是否是一个工作坊文件
 }
 
+type modType = {
+  // 模组的Steam Workshop ID
+  id: string;
+  // 模组的名称
+  name: string;
+  // 模组的版本号
+  version: string;
+  // 模组的次版本号
+  subversion: string;
+  // 是否启用该模组
+  enabled: boolean;
+}
 
-export type { modsCards }
+export type { modsCards, modType }

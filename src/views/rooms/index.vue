@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { RoomsType, RegionsType } from '@/types/rooms';
+import type { RoomsType, RegionsType, RoomType } from '@/types/rooms';
 import type { RoomsResponse } from '@/types/rooms.d';
 import { getRooms, getRegions, getRoom } from '@/apis/rooms';
 import { onMounted, ref } from 'vue';
@@ -14,6 +14,7 @@ import winter from '@/assets/dst/winter.png'
 
 let currentRooms = ref<RoomsType[]>([]);
 let rooms = ref<RoomsType[]>([]);
+let room = ref<RoomType[]>([])
 let regions = ref<RegionsType[]>([]);
 let page = ref(1);
 let pageSize = ref(60);
@@ -132,15 +133,14 @@ const getRoomDetails = (rowId: string) => {
     rowId: rowId
   }
   getRoom(params).then(res => {
+    const typedRes = res as RoomsResponse;
     showRoomDetails.value = true
-    console.log(showRoomDetails.value);
-    
+    room.value = typedRes.data.GET[0] || {}
   })
 }
 </script>
 <template>
-  {{ showRoomDetails }}
-  <VRoom :dialog="showRoomDetails" v-model="showRoomDetails" ></VRoom>
+  <VRoom v-model:dialog="showRoomDetails" :room="room"></VRoom>
   <v-app-bar class="px-2" flat>
     <v-row>
       <v-col cols="3">

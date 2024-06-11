@@ -22,4 +22,16 @@ type RoomType = {
 
 }
 
-export type { RoomsType, RegionsType, RoomType }
+type playerType = {
+  colour: string;
+  // 玩家的事件等级
+  eventlevel: number;
+  // 玩家的名称
+  name: string;
+  // 玩家的Steam网络ID
+  netid: string;
+  // 玩家的角色预制件
+  prefab: string;
+}
+
+export type { RoomsType, RegionsType, RoomType, playerType }
