@@ -1,0 +1,17 @@
+
+// .v-input--density-compact {
+//   --v-input-control-height: 30px;
+//   --v-input-padding-top: 8px;
+// }
+
+.v-select .v-field__input{
+  height: var(--v-input-control-height, 56px);
+  align-content: center;
+}
+.v-select .v-field__prepend-inner, .v-field__append-inner, .v-field__clearable{
+  padding-top: 6px
+}
+
+.v-select .v-select__selection {
+  font-size: 0.75rem;
+}

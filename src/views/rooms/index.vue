@@ -157,7 +157,7 @@ const getRoomDetails = (rowId: string) => {
   <v-app-bar class="px-2" flat="">
     <v-row>
       <v-col cols="3">
-        <v-text-field v-model="searchKey"  variant="outlined" density="compact" hide-details placeholder="输入房间名称"></v-text-field>
+        <v-text-field v-model="searchKey"  variant="outlined" hide-details placeholder="输入房间名称"></v-text-field>
       </v-col>
       <v-col cols="3">
         <v-btn width="100" class="bg-primary" @click='searchPage(searchKey)'>搜索</v-btn>

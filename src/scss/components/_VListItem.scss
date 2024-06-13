@@ -1,0 +1,23 @@
+.v-list-item-title{
+  font-size: 0.75rem;
+}
+
+.v-list-item--variant-text .v-list-item__overlay{
+  background: #2962FF;
+}
+
+.v-list-item--active .v-list-item-title{
+  color: #2962FF;
+}
+.v-list-item--density-default.v-list-item--one-line{
+  height: 40px;
+  min-height: 40px
+}
+
+.v-navigation-drawer .v-list-item--active .v-list-item-title{
+  color: #fff !important;
+}
+
+.v-navigation-drawer .scrollnavbar .v-list-group__items .v-list-item, .scrollnavbar .v-list-item{
+  border-radius: 4px !important;
+}

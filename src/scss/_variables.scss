@@ -8,8 +8,8 @@
 $color-pack: false;
 
 // Global font size and border radius
-$font-size-root: 1rem;
-$border-radius-root: 4px;
+$font-size-root: 0.65rem;
+$border-radius-root: 2px;
 $body-font-family: 'Plus Jakarta Sans', sans-serif !default;
 $heading-font-family: $body-font-family !default;
 $btn-font-weight: 400 !default;
@@ -122,8 +122,12 @@ $white: #fff !default;
 $card-item-spacer-xy: 20px 24px !default;
 $card-text-spacer: 24px !default;
 $card-title-size: 18px !default;
+
 // Global Shadow
 $box-shadow: rgb(145 158 171 / 20%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px;
 
 // select
-$select-transition: 0.1s settings.$standard-easing
+// $select-transition: all 0.6s cubic-bezier(0.0, 0, 0.2, 1)
+$input-control-height: 40px;
+
+$input-density: ('default': 0, 'comfortable': -4, 'compact': -8)

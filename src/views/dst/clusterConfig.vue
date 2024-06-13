@@ -13,8 +13,8 @@ const modeMap = {
   ></v-col>
   <v-col cols="3"><v-textarea variant="outlined" label="房间描述" density="compact" hide-details placeholder="描述"></v-textarea></v-col>
   <v-col
-    ><v-radio-group inline hide-details="" :ripple="false" color="primary">
-      <v-radio  v-for="(mode, index) in modeMap" :key="index" :label="mode" :value="index"></v-radio> </v-radio-group
+    ><v-radio-group height="15" inline hide-details="" :ripple="false" color="primary">
+      <v-radio :ripple="false" v-for="(mode, index) in modeMap" :key="index" :label="mode" :value="index"></v-radio> </v-radio-group
   ></v-col>
   <v-col cols="3"
     ><v-text-field

@@ -1,5 +1,5 @@
 .v-text-field input {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 .v-field__outline {
   color: rgb(var(--v-theme-inputBorder),0.5);
@@ -8,4 +8,19 @@
   .v-field--variant-outlined {
     background-color: rgba(0, 0, 0, 0.025);
   }
+}
+// .v-field--focused{
+//  border: 1px  solid !important;
+// }
+
+
+.v-field--variant-outlined.v-field--focused .v-field__outline{
+  --v-field-border-width: 1px !important
+}
+.v-input--density-compact {
+  --v-input-control-height: 30px !important;
+  --v-input-padding-top: 6px;
+}
+.v-input--density-compact .v-field--variant-outlined, .v-input--density-compact .v-field--single-line, .v-input--density-compact .v-field--no-label{
+  --v-field-padding-bottom: 4px;
 }
