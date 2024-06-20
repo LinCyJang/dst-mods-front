@@ -67,11 +67,18 @@ const handleReset = () => {
   </v-app-bar>
   <v-app-bar elevation="1">
     <v-spacer></v-spacer>
-    <v-pagination :total-visible="6" :length="Math.ceil(total / 10)" v-model="page" @update:model-value="changePage"></v-pagination>
+    <v-pagination :length="Math.ceil(total / 10)" v-model="page" @update:model-value="changePage"></v-pagination>
   </v-app-bar>
   <v-row>
     <v-col cols="12">
       <ModsCards :mods-card="mods"/>
+    </v-col>
+  </v-row>
+  <v-row v-if="loading && mods.length === 0">
+    <v-col cols="2" v-for="n in 10" :key="n">
+      <v-card>
+        <v-skeleton-loader type="card,article"></v-skeleton-loader>
+      </v-card>
     </v-col>
   </v-row>
 </template>

@@ -167,7 +167,7 @@ const getRoomDetails = (rowId: string) => {
   </v-app-bar>
   <v-app-bar  elevation="1">
     <v-spacer></v-spacer>
-    <v-pagination :total-visible="6" :length="Math.ceil(total / 10)" v-model="page" @update:model-value="changePage"></v-pagination>
+    <v-pagination :length="Math.ceil(total / 10)" v-model="page" @update:model-value="changePage"></v-pagination>
   </v-app-bar>
   <v-row>
     <v-col cols="3" v-for="(room, index) in pageRooms" :key="index">
@@ -229,6 +229,13 @@ const getRoomDetails = (rowId: string) => {
         <v-card-actions>
           <v-btn block border color="primary" @click="getRoomDetails(room.__rowId)">详情</v-btn>
         </v-card-actions>
+      </v-card>
+    </v-col>
+  </v-row>
+  <v-row v-if="loading && pageRooms.length === 0">
+    <v-col cols="3" v-for="(n) in 10" :key="n">
+      <v-card>
+        <v-skeleton-loader type="card, article, actions"></v-skeleton-loader>
       </v-card>
     </v-col>
   </v-row>

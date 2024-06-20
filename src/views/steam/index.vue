@@ -76,7 +76,7 @@ const querySystem = () => {
 <template>
   <v-row>
     <v-col cols="3">
-      <v-card variant="outlined" color="#999">
+      <v-card variant="outlined" class="white">
         <v-col>
           操作系统：{{ systemInfo.system }} - {{ systemInfo.version }}
         </v-col>

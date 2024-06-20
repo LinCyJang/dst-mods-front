@@ -24,7 +24,7 @@ export default createVuetify({
             rounded: 'md'
         },
         VCard: {
-            rounded: 'sm'
+            rounded: 'sm',
         },
         VTextField: {
             variant:"outlined",
@@ -53,5 +53,13 @@ export default createVuetify({
         VInput: {
             density: 'comfortable',
         },
+        VPagination: {
+            density: 'compact',
+            totalVisible: 10,
+            rounded: 'sm',
+        },
+        VMenu: {
+            transition: 'slide-y-transition'
+        }
     }
 });

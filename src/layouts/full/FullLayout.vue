@@ -16,7 +16,9 @@ let isOverlay = ref(true);
       <MainView />
       <v-main class="grey-lighten-5">
         <v-container fluid class="page-wrapper">
-          <router-view></router-view>
+          <v-slide-y-transition>
+            <router-view></router-view>
+          </v-slide-y-transition>
         </v-container>
       </v-main>
     </v-app>
