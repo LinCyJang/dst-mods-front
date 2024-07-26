@@ -4,3 +4,8 @@ import { get } from '@/utils/methods'
 export  const getMods = (params: ModsRequest) => {
    return get('/dst/v1/mods', params)
 }
+
+
+export const getSystemInfo = () => {
+   return get('/dst/v1/system')
+}

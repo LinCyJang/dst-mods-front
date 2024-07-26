@@ -1,23 +1,28 @@
 <script setup lang="ts">
 /*Call Components*/
 import SalesOverview from '@/components/dashboard/SalesOverview.vue';
-import YearlyBreakup from '@/components/dashboard/YearlyBreakup.vue';
 import MonthlyEarning from '@/components/dashboard/MonthlyEarnings.vue';
 import RecentTransaction from '@/components/dashboard/RecentTransaction.vue';
 import ProductPerformance from '@/components/dashboard/ProductPerformance.vue';
 import ProductCards from '@/components/dashboard/ProductCards.vue';
-import { getMods } from '@/apis/dashboard'
-import { onMounted } from "vue";
+import cpuCard from './cpuCard.vue'
+import { getSystemInfo } from '@/apis/dashboard'
+import type { CPUResponse } from '@/types/dashboard'
+import { onMounted, ref } from "vue";
 
 onMounted(() => {
-    const params = {
-        page: 1,
-        pageSize: 10
-    }
-    // getMods(params).then(res => {
-    //     console.log(res);
-    // })
+    qureySystemInfo()
 })
+
+const cpu = ref({})
+
+const qureySystemInfo = () => {
+    getSystemInfo().then(res => {
+        const typedRes = res as CPUResponse
+        cpu.value = typedRes.data.cpu
+    })
+}
+
 </script>
 <template>
     <v-row>
@@ -30,7 +35,7 @@ onMounted(() => {
                 <!-- Yearly Breakup / Monthly Earnings -->
                 <v-col cols="12" lg="4">
                     <div class="mb-6">
-                        <YearlyBreakup />
+                        <cpuCard :cpu-info="cpu" />
                     </div>
                     <div>
                         <MonthlyEarning />

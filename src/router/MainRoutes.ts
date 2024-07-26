@@ -32,6 +32,11 @@ const MainRoutes = {
             component: () => import('@/views/rooms/index.vue')
         },
         {
+            name: 'UNIVER-Univer',
+            path: '/univer',
+            component: () => import('@/views/univer/index.vue')
+        },
+        {
             name: 'UTILTIES-Typography',
             path: '/ui/typography',
             component: () => import('@/views/components/Typography.vue')
@@ -51,7 +56,7 @@ const MainRoutes = {
             name: 'EXTRA-Starter',
             path: '/sample-page',
             component: () => import('@/views/pages/SamplePage.vue')
-        },
+        }
     ]
 };
 

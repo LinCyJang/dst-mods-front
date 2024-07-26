@@ -1,11 +1,15 @@
 import {
     ApertureIcon,
     CopyIcon,
-    LayoutDashboardIcon, LoginIcon, MoodHappyIcon, TypographyIcon, UserPlusIcon,
+    LayoutDashboardIcon,
+    LoginIcon,
+    MoodHappyIcon,
+    TypographyIcon,
+    UserPlusIcon,
     BrandSteamIcon,
     DeviceGamepad2Icon
 } from 'vue-tabler-icons';
-
+import { IconBrandOffice } from '@tabler/icons-vue';
 
 export interface menu {
     header?: string;
@@ -35,13 +39,6 @@ const sidebarItem: menu[] = [
         icon: DeviceGamepad2Icon,
         to: '/dst'
     },
-    { header: 'Steam' },
-    {
-        title: 'Steam',
-        icon: BrandSteamIcon,
-        to: '/steam'
-    },
-    { header: 'utilities' },
     {
         title: 'Mods',
         icon: TypographyIcon,
@@ -51,6 +48,18 @@ const sidebarItem: menu[] = [
         title: 'Rooms',
         icon: TypographyIcon,
         to: '/dst/rooms'
+    },
+    { header: 'Steam' },
+    {
+        title: 'Steam',
+        icon: BrandSteamIcon,
+        to: '/steam'
+    },
+    { header: 'univer' },
+    {
+        title: 'Univer',
+        icon: IconBrandOffice,
+        to: '/univer'
     },
     {
         title: 'Typography',
