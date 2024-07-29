@@ -29,7 +29,7 @@ let imageMap = ref({
   'endless': bg,
   'survival': bg,
   'wilderness': bg,
-  '': bg,
+  '': bg, 
 })
 let showRoomDetails = ref(false)
 

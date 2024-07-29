@@ -27,7 +27,7 @@ const props = defineProps({
     default: () => {}
   }
 });
-
+// 222
 const avatarMap = {
   walter: walter,
   wanda: wanda,
