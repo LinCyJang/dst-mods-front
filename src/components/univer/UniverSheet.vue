@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" class="univer-container" />
+  <div ref="container" class="univer-container" id="univer-container" />
 </template>
 
 <script setup lang="ts">
@@ -14,11 +14,18 @@ import { UniverSheetsFormulaPlugin } from "@univerjs/sheets-formula";
 import { UniverSheetsUIPlugin } from "@univerjs/sheets-ui";
 import { UniverUIPlugin } from "@univerjs/ui";
 import { onBeforeUnmount, onMounted, ref, toRaw } from "vue";
+// import { RowHeaderCustomExtension } from "@/plugins/univer-row-header";
+// import { ColumnHeaderCustomExtension } from "@/plugins/univer-column-header";
+// import { MainCustomExtension } from "@/plugins/univer-main-content";
+// import { FUniver } from '@univerjs/facade';
+import '@univerjs/sheets-filter-ui/lib/index.css';
+ 
+// import { UniverSheetsFilterPlugin } from '@univerjs/sheets-filter';
+// import { UniverSheetsFilterUIPlugin } from '@univerjs/sheets-filter-ui';
 
 import { zhCN, enUS } from 'univer:locales'
 
 const { data } = defineProps({
-  // workbook data
   data: {
     type: Object,
     default: () => ({}),
@@ -37,10 +44,6 @@ onBeforeUnmount(() => {
   destroyUniver();
 });
 
-/**
- * Initialize univer instance and workbook instance
- * @param data {IWorkbookData} document see https://univer.ai/typedoc/@univerjs/core/interfaces/IWorkbookData
- */
 const init = (data = {}) => {
   const univer = new Univer({
     theme: defaultTheme,
@@ -51,7 +54,8 @@ const init = (data = {}) => {
     },
   });
   univerRef.value = univer;
-
+  console.log(container.value);
+  
 
   // core plugins
   univer.registerPlugin(UniverRenderEnginePlugin);
@@ -70,10 +74,19 @@ const init = (data = {}) => {
   univer.registerPlugin(UniverSheetsPlugin);
   univer.registerPlugin(UniverSheetsUIPlugin);
   univer.registerPlugin(UniverSheetsFormulaPlugin);
+  // univer.registerPlugin(UniverSheetsFilterPlugin);
+  // univer.registerPlugin(UniverSheetsFilterUIPlugin);
+  // const unitId = 'workbook'
+  // const univerAPI = FUniver.newAPI(univer);
 
+  // // register custom extension
+  // univerAPI.getHooks().onRendered(() => {
+  //   univerAPI.registerSheetRowHeaderExtension(unitId, new RowHeaderCustomExtension());
+  //   univerAPI.registerSheetColumnHeaderExtension(unitId, new ColumnHeaderCustomExtension());
+  //   univerAPI.registerSheetMainExtension(unitId, new MainCustomExtension());
+  // })
   // create workbook instance
   workbook.value = univer.createUnit<IWorkbookData, Workbook>(UniverInstanceType.UNIVER_SHEET, data)
-  
 };
 
 /**
